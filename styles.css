@@ -70,3 +70,9 @@
     grid-template-columns:repeat(auto-fit,330px) ;
     gap:20px;
 }
+
+.books{
+    height:400px;
+    grid-template-rows: 4fr 2fr 1fr 2fr;
+    border:1px solid black;
+}
