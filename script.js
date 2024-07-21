@@ -62,11 +62,13 @@ function generateBooks(){
         if(myLibrary[i].read===true){
         latestBook.childNodes[childCounter].childNodes[0].innerText="Completed";}
         else{latestBook.childNodes[childCounter].childNodes[0].innerText="Pending";}
+        latestBook.childNodes[childCounter].childNodes[0].setAttribute('id',`readstatus${i}`)
         
 
         deletionDiv=document.createElement("button");
         latestBook.childNodes[childCounter].appendChild(deletionDiv).classList.add("deletion");
         latestBook.childNodes[childCounter].childNodes[1].innerText="Delete";
+        latestBook.childNodes[childCounter].childNodes[1].setAttribute('id',`delete${i}`)
         
         console.dir(latestBook);
 
