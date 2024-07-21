@@ -32,8 +32,9 @@ let latestBook;
 function generateBooks(){
     resetBooks();
     for(let i=0;i<myLibrary.length;i++){
+        
         let childCounter=0;
-        let modDivCounter=0;
+
         newDiv=document.createElement("div");
         gridSkeleton.appendChild(newDiv).classList.add("books");
         gridSkeleton.children[i].setAttribute('id',`book${i}`);
