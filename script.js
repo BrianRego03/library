@@ -86,3 +86,12 @@ function resetBooks(){
         gridSkeleton.removeChild(child);
     }
 }
+
+let btn= document.querySelectorAll(".deletion");
+for(let deletor of btn){
+    deletor.addEventListener('click',()=>{
+        let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);
+        gridSkeleton.removeChild(childDeletion);
+        
+    });
+}
