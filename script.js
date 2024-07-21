@@ -95,3 +95,13 @@ for(let deletor of btn){
         
     });
 }
+
+let btnRead= document.querySelectorAll(".reading");
+for(let toggler of btnRead){
+    toggler.addEventListener('click',()=>{
+        let readToggler=document.getElementById(`readstatus${toggler.id.slice(10)}`);
+        readToggler.classList.toggle('reading');
+        
+        
+    });
+}
