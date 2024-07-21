@@ -33,6 +33,7 @@ function generateBooks(){
     resetBooks();
     for(let i=0;i<myLibrary.length;i++){
         let childCounter=0;
+        let modDivCounter=0;
         newDiv=document.createElement("div");
         gridSkeleton.appendChild(newDiv).classList.add("books");
         gridSkeleton.children[i].setAttribute('id',`book${i}`);
@@ -54,14 +55,18 @@ function generateBooks(){
 
         modDiv=document.createElement("div");
         latestBook.appendChild(modDiv).classList.add("bookMod");
-        latestBook.childNodes[childCounter].innerText=myLibrary[i].read;
-        childCounter++;
+               
+        readingDiv=document.createElement("button");
+        latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("reading");
+        if(myLibrary[i].read===true){
+        latestBook.childNodes[childCounter].childNodes[0].innerText="Completed";}
+        else{latestBook.childNodes[childCounter].childNodes[0].innerText="Pending";}
+        
 
-        deletionDiv=document.createElement("div");
-        latestBook.appendChild(deletionDiv).classList.add("deletion");
-
-        readingDiv=document.createElement("div");
-        latestBook.appendChild(readingDiv).classList.add("reading");
+        deletionDiv=document.createElement("button");
+        latestBook.childNodes[childCounter].appendChild(deletionDiv).classList.add("deletion");
+        latestBook.childNodes[childCounter].childNodes[1].innerText="Delete";
+        
         console.dir(latestBook);
 
         
