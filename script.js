@@ -30,7 +30,9 @@ let deletionDiv;
 let readingDiv;
 let latestBook;
 function generateBooks(){
+    resetBooks();
     for(let i=0;i<myLibrary.length;i++){
+        
         newDiv=document.createElement("div");
         gridSkeleton.appendChild(newDiv).classList.add("books");
         gridSkeleton.children[i].setAttribute('id',`book${i}`);
@@ -58,3 +60,12 @@ function generateBooks(){
 }
 
 generateBooks();
+generateBooks();
+
+function resetBooks(){
+    let count=gridSkeleton.childElementCount;
+    for(let j=0;j<count;j++){
+        let child=document.getElementById(`book${j}`);
+        gridSkeleton.removeChild(child);
+    }
+}
