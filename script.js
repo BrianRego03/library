@@ -58,6 +58,7 @@ function generateBooks(){
         latestBook.appendChild(modDiv).classList.add("bookMod");
                
         readingDiv=document.createElement("button");
+        latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("pending");
         latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("reading");
         if(myLibrary[i].read===true){
         latestBook.childNodes[childCounter].childNodes[0].innerText="Completed";}

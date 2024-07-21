@@ -110,6 +110,12 @@
     min-width:164px;
     align-content: center;
 }
+.pending{
+  background-color: gray;
+  border:1px solid black;
+  min-width: 164px;
+  align-content: center;
+}
 
 .reading{
     background-color: rgb(198, 255, 255);
@@ -117,3 +123,4 @@
     min-width: 164px;
     align-content: center;
 }
+
