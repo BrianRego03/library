@@ -51,3 +51,11 @@
     color: black;
     background-color: #fed7aa;
 }
+
+.addBook{
+    background-color: #ffedd5;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
