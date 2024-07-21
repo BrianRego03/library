@@ -59,3 +59,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.addButton{
+    background-color: #fecaca;
+    /* border-color: rgba(0,0,0,0); */
+    box-shadow: 4px 2px 2px black;
+}
