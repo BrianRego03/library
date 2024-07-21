@@ -67,12 +67,13 @@
 }
 
 .bookGrid{
+    display: grid;
     grid-template-columns:repeat(auto-fit,330px) ;
     gap:20px;
 }
 
 .books{
-    height:400px;
+    min-height:400px;
     grid-template-rows: 4fr 2fr 1fr 2fr;
     border:1px solid black;
     text-align: center;
@@ -96,17 +97,18 @@
 
 .bookMod{
     display:flex;
-    min-width: 100%;
-    min-height: 100%;
+    
 
 }
 
 .deletion{
     background-color: rgb(235, 163, 163);
     border:1px solid black;
+    min-width:164px;
 }
 
 .reading{
     background-color: rgb(198, 255, 255);
     border:1px solid black;
+    min-width: 164px;
 }
