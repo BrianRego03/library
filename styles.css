@@ -93,3 +93,20 @@
     font-size:16px;
     border: 1px solid black;
 }
+
+.bookMod{
+    display:flex;
+    min-width: 100%;
+    min-height: 100%;
+
+}
+
+.deletion{
+    background-color: rgb(235, 163, 163);
+    border:1px solid black;
+}
+
+.reading{
+    background-color: rgb(198, 255, 255);
+    border:1px solid black;
+}
