@@ -75,11 +75,12 @@
     height:400px;
     grid-template-rows: 4fr 2fr 1fr 2fr;
     border:1px solid black;
+    text-align: center;
 }
 
 .bookTitle{
     font-size: 24px;
-    text-align: center;
+    
     border: 1px solid black;
 }
 
