@@ -78,22 +78,22 @@
     grid-template-rows: 4fr 2fr 1fr 2fr;
     border:1px solid black;
     text-align: center;
-    
+    font-weight: 600;
 }
 
 .bookTitle{
-    font-size: 24px;
+    font-size: 32px;
     
     border: 1px solid black;
 }
 
 .author{
-    font-size:18px;
+    font-size:24px;
     border: 1px solid black;
 }
 
 .totalPages{
-    font-size:16px;
+    font-size:20px;
     border: 1px solid black;
 }
 
