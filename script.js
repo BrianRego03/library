@@ -32,7 +32,7 @@ let latestBook;
 function generateBooks(){
     resetBooks();
     for(let i=0;i<myLibrary.length;i++){
-        
+
         let childCounter=0;
 
         newDiv=document.createElement("div");
@@ -51,7 +51,7 @@ function generateBooks(){
 
         pageDiv=document.createElement("div");
         latestBook.appendChild(pageDiv).classList.add("totalPages");
-        latestBook.childNodes[childCounter].innerText=myLibrary[i].pages;
+        latestBook.childNodes[childCounter].innerText=`No. of pages: ${myLibrary[i].pages}`;
         childCounter++;
 
         modDiv=document.createElement("div");
