@@ -77,7 +77,7 @@ function generateBooks(){
         latestBook.childNodes[childCounter].childNodes[1].innerText="Delete";
         latestBook.childNodes[childCounter].childNodes[1].setAttribute('id',`delete${i}`)
         
-        // console.dir(latestBook);
+        
 
         
 
@@ -105,8 +105,7 @@ deletionFunc();
 function deletionFunc(){
     for(let deletor of btn){
         deletor.addEventListener('click',()=>{
-            let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);
-            console.log(`book${deletor.id.slice(6)}`);
+            let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);          
             gridSkeleton.removeChild(childDeletion);
             myLibrary.splice(`${deletor.id.slice(6)}`,1);
             console.log(myLibrary);
@@ -157,21 +156,21 @@ function readFunc(){
         for(let toggler of btnRead){
         toggler.addEventListener('click',()=>{
             let readToggler=document.getElementById(`readstatus${toggler.id.slice(10)}`);
-            console.log(toggler.id.slice(10))
+            
             
             if(myLibrary[toggler.id.slice(10)].read===true){
                 readToggler.classList.remove('reading');
                 readToggler.classList.add('pending');
                 readToggler.innerText='Pending';
                 myLibrary[toggler.id.slice(10)].read=false;
-                console.log(readToggler);
+                
             }
             else if(myLibrary[toggler.id.slice(10)].read===false){
                 readToggler.classList.remove('pending');
                 readToggler.classList.add('reading');
                 readToggler.innerText='Completed';
                 myLibrary[toggler.id.slice(10)].read=true;
-                console.log(readToggler);
+                
                 
 
             }
