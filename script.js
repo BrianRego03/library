@@ -96,6 +96,29 @@ function resetBooks(){
     }
 }
 
+
+
+let btn= document.querySelectorAll(".deletion");
+
+deletionFunc();
+
+function deletionFunc(){
+    for(let deletor of btn){
+        deletor.addEventListener('click',()=>{
+            let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);
+            console.log(`book${deletor.id.slice(6)}`);
+            gridSkeleton.removeChild(childDeletion);
+            myLibrary.splice(`${deletor.id.slice(6)}`,1);
+            console.log(myLibrary);
+            console.log(btnRead);
+            deletionReset(`${deletor.id.slice(6)}`);
+            generateBooks();
+            setBtn();
+            
+        });
+    }
+}
+
 function deletionReset(position){
     let count=gridSkeleton.childElementCount;
     for(let j=0;j<count+1;j++){
@@ -119,33 +142,9 @@ function setBtn(){
     deletionFunc();
     pendingFunc();
     readFunc();
-   
 
 }
 
-
-
-
-let btn= document.querySelectorAll(".deletion");
-
-deletionFunc();
-
-function deletionFunc(){
-    for(let deletor of btn){
-        deletor.addEventListener('click',()=>{
-            let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);
-            console.log(`book${deletor.id.slice(6)}`);
-            gridSkeleton.removeChild(childDeletion);
-            myLibrary.splice(`${deletor.id.slice(6)}`,1);
-            console.log(myLibrary);
-            console.log(btnRead);
-            deletionReset(`${deletor.id.slice(6)}`);
-            generateBooks();
-            setBtn();
-            
-        });
-    }
-}
 
 
 
