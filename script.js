@@ -28,6 +28,7 @@ let pageDiv;
 let modDiv;
 let deletionDiv;
 let readingDiv;
+let pendingDiv;
 let latestBook;
 function generateBooks(){
     resetBooks();
@@ -58,11 +59,16 @@ function generateBooks(){
         latestBook.appendChild(modDiv).classList.add("bookMod");
                
         readingDiv=document.createElement("button");
-        latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("pending");
-        latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("reading");
+        pendingDiv=document.createElement("button");
+        
+        
         if(myLibrary[i].read===true){
+        latestBook.childNodes[childCounter].appendChild(readingDiv).classList.add("reading");    
         latestBook.childNodes[childCounter].childNodes[0].innerText="Completed";}
-        else{latestBook.childNodes[childCounter].childNodes[0].innerText="Pending";}
+        else{
+        latestBook.childNodes[childCounter].appendChild(pendingDiv).classList.add("pending");
+        latestBook.childNodes[childCounter].childNodes[0].innerText="Pending";}
+
         latestBook.childNodes[childCounter].childNodes[0].setAttribute('id',`readstatus${i}`)
         
 
@@ -101,8 +107,54 @@ let btnRead= document.querySelectorAll(".reading");
 for(let toggler of btnRead){
     toggler.addEventListener('click',()=>{
         let readToggler=document.getElementById(`readstatus${toggler.id.slice(10)}`);
-        readToggler.classList.toggle('reading');
+        console.log(toggler.id.slice(10))
+        
+        if(myLibrary[toggler.id.slice(10)].read===true){
+            readToggler.classList.remove('reading');
+            readToggler.classList.add('pending');
+            readToggler.innerText='Pending';
+            myLibrary[toggler.id.slice(10)].read=false;
+            console.log(readToggler);
+        }
+        else if(myLibrary[toggler.id.slice(10)].read===false){
+            readToggler.classList.remove('pending');
+            readToggler.classList.add('reading');
+            readToggler.innerText='Completed';
+            myLibrary[toggler.id.slice(10)].read=true;
+            console.log(readToggler);
+            
+
+        }
         
         
     });
+}
+
+let btnReadAlt= document.querySelectorAll(".pending");
+for(let togglerAlt of btnReadAlt){
+
+    togglerAlt.addEventListener('click',()=>{
+        let readTogglerAlt=document.getElementById(`readstatus${togglerAlt.id.slice(10)}`);
+        console.log(togglerAlt);      
+        
+        if(myLibrary[togglerAlt.id.slice(10)].read===false){
+            readTogglerAlt.classList.remove('pending');
+            readTogglerAlt.classList.add('reading');
+            readTogglerAlt.innerText='Completed';
+            myLibrary[togglerAlt.id.slice(10)].read=true;
+        
+        }
+        else if(myLibrary[togglerAlt.id.slice(10)].read===true){
+            readTogglerAlt.classList.remove('reading');
+            readTogglerAlt.classList.add('pending');
+            readTogglerAlt.innerText='Pending';
+            myLibrary[togglerAlt.id.slice(10)].read=false;
+
+        }
+            
+        
+        
+        
+    });
+    
 }
