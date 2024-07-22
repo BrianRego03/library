@@ -84,7 +84,7 @@ function generateBooks(){
 }
 
 generateBooks();
-generateBooks();
+
 
 function resetBooks(){
     let count=gridSkeleton.childElementCount;
@@ -94,11 +94,27 @@ function resetBooks(){
     }
 }
 
+function deletionReset(position){
+    let count=gridSkeleton.childElementCount;
+    for(let j=0;j<count+1;j++){
+        if(j==position){
+            
+            continue;
+        };
+        let child=document.getElementById(`book${j}`);
+        gridSkeleton.removeChild(child);
+    }
+
+}
+
 let btn= document.querySelectorAll(".deletion");
 for(let deletor of btn){
     deletor.addEventListener('click',()=>{
         let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);
         gridSkeleton.removeChild(childDeletion);
+        myLibrary.splice(`${deletor.id.slice(6)}`,1);
+        deletionReset(`${deletor.id.slice(6)}`);
+        generateBooks();
         
     });
 }
