@@ -124,3 +124,12 @@
     align-content: center;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+  max-width: 330px ;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
