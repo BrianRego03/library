@@ -158,3 +158,9 @@ for(let togglerAlt of btnReadAlt){
     });
     
 }
+let dialogs=document.querySelector("dialog");
+let buttonadd=document.querySelector(".addButton")
+buttonadd= addEventListener('click',()=>{dialogs.showModal();});
+
+let buttoncancel=document.querySelector("#cancellation")
+buttonadd= addEventListener('click',()=>{dialogs.close();});
