@@ -11,13 +11,13 @@ Book.prototype.addBookToLibrary=function(){
     myLibrary[myLibrary.length]=this;
 }
 
-const book1=new Book('Autobio','JohnCena',34,true);
+const book1=new Book('A Game of Thrones','George.R.R.Martin',694,true);
 
-const book2=new Book('Autbio','Johena',84,false);
+const book2=new Book('Night Boat to Tangier',' Kevin Barry',224,false);
 
 book1.addBookToLibrary();
 book2.addBookToLibrary();
-console.log(myLibrary);
+
 
 let gridSkeleton=document.querySelector(".bookGrid");
 let bookSkeleton=document.querySelector(".books");
@@ -108,8 +108,7 @@ function deletionFunc(){
             let childDeletion=document.getElementById(`book${deletor.id.slice(6)}`);          
             gridSkeleton.removeChild(childDeletion);
             myLibrary.splice(`${deletor.id.slice(6)}`,1);
-            console.log(myLibrary);
-            console.log(btnRead);
+            
             deletionReset(`${deletor.id.slice(6)}`);
             generateBooks();
             setBtn();
@@ -133,15 +132,11 @@ function deletionReset(position){
 }
 
 function setBtn(){
-    console.log(btn);
-    console.log(btnRead);
-    console.log(btnReadAlt);
+    
     btn= document.querySelectorAll(".deletion");
     btnRead= document.querySelectorAll(".reading");
     btnReadAlt= document.querySelectorAll(".pending");
-    console.log(btn);
-    console.log(btnRead);
-    console.log(btnReadAlt);
+    
     deletionFunc();
     pendingFunc();
     readFunc();
@@ -197,7 +192,7 @@ function pendingFunc(){
 
         togglerAlt.addEventListener('click',()=>{
             let readTogglerAlt=document.getElementById(`readstatus${togglerAlt.id.slice(10)}`);
-            console.log(togglerAlt);      
+                  
             
             if(myLibrary[togglerAlt.id.slice(10)].read===false){
                 readTogglerAlt.classList.remove('pending');
