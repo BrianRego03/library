@@ -241,6 +241,7 @@ formSubmit.addEventListener('submit',function(e){
     setBtn();
     generateBooks();
     setBtn();
+    formSubmit.reset();
     
     wait=1;
     if(wait=1){
