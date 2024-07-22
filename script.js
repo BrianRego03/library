@@ -164,3 +164,19 @@ buttonadd.addEventListener('click',()=>{dialogs.showModal();});
 
 let buttoncancel=document.querySelector("#cancellation");
 buttoncancel.addEventListener('click',()=>{dialogs.close();});
+
+let formSubmit=document.querySelector("form");
+let buttonSubmit=document.querySelector("#submission");
+formSubmit.addEventListener('submit',function(e){
+    // e.preventDefault();
+    // formSubmit.requestSubmit();
+    
+
+
+
+    console.log(this);
+    console.log(formSubmit);
+    console.log(formSubmit);
+    dialogs.close();
+
+})
