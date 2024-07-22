@@ -134,6 +134,12 @@ form{
   justify-content: center;
 }
 #formAlign{
-  display: flex;
-  justify-content: center;
+ align-self: center;
+ justify-self: center;
+
+}
+
+dialog::backdrop{
+  background-color: rgb(151, 151, 0);
+  opacity:0.2;
 }
