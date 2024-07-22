@@ -133,3 +133,7 @@ form{
   align-self: center;
   justify-content: center;
 }
+#formAlign{
+  display: flex;
+  justify-content: center;
+}
