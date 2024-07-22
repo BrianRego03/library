@@ -233,22 +233,12 @@ let formSubmit=document.querySelector("form");
 let buttonSubmit=document.querySelector("#submission");
 formSubmit.addEventListener('submit',function(e){
     e.preventDefault();
-    // formSubmit.requestSubmit();
-    
 
-
-
-    console.log(this);
-    console.log(formSubmit);
-    console.dir(formSubmit);
-    console.log(formSubmit[0].value);
     let wait=0;
     const bookz= new Book(formSubmit[0].value,formSubmit[1].value,formSubmit[2].value,
         !!formSubmit[3].value);
     bookz.addBookToLibrary();
     setBtn();
-    console.log(formSubmit[3].value);
-    console.dir(myLibrary)
     generateBooks();
     setBtn();
     
@@ -257,8 +247,5 @@ formSubmit.addEventListener('submit',function(e){
         dialogs.close();
 
     }    
-
-    // myLibrary[myLibrary.length]=
-    // dialogs.close();
 
 })
