@@ -134,10 +134,14 @@ function deletionReset(position){
 
 function setBtn(){
     console.log(btn);
+    console.log(btnRead);
+    console.log(btnReadAlt);
     btn= document.querySelectorAll(".deletion");
     btnRead= document.querySelectorAll(".reading");
     btnReadAlt= document.querySelectorAll(".pending");
     console.log(btn);
+    console.log(btnRead);
+    console.log(btnReadAlt);
     deletionFunc();
     pendingFunc();
     readFunc();
@@ -228,7 +232,7 @@ buttoncancel.addEventListener('click',()=>{dialogs.close();});
 let formSubmit=document.querySelector("form");
 let buttonSubmit=document.querySelector("#submission");
 formSubmit.addEventListener('submit',function(e){
-    // e.preventDefault();
+    e.preventDefault();
     // formSubmit.requestSubmit();
     
 
@@ -236,7 +240,25 @@ formSubmit.addEventListener('submit',function(e){
 
     console.log(this);
     console.log(formSubmit);
-    console.log(formSubmit);
-    dialogs.close();
+    console.dir(formSubmit);
+    console.log(formSubmit[0].value);
+    let wait=0;
+    const bookz= new Book(formSubmit[0].value,formSubmit[1].value,formSubmit[2].value,
+        !!formSubmit[3].value);
+    bookz.addBookToLibrary();
+    setBtn();
+    console.log(formSubmit[3].value);
+    console.dir(myLibrary)
+    generateBooks();
+    setBtn();
+    
+    wait=1;
+    if(wait=1){
+        dialogs.close();
+
+    }    
+
+    // myLibrary[myLibrary.length]=
+    // dialogs.close();
 
 })
