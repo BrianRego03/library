@@ -114,13 +114,17 @@ function setBtn(){
     console.log(btn);
     btn= document.querySelectorAll(".deletion");
     btnRead= document.querySelectorAll(".reading");
-    btnRead= document.querySelectorAll(".reading");
+    btnReadAlt= document.querySelectorAll(".pending");
     console.log(btn);
     deletionFunc();
-    
-    // console.log
+    pendingFunc();
+    readFunc();
+   
 
 }
+
+
+
 
 let btn= document.querySelectorAll(".deletion");
 
@@ -143,61 +147,79 @@ function deletionFunc(){
     }
 }
 
-let btnRead= document.querySelectorAll(".reading");
-for(let toggler of btnRead){
-    toggler.addEventListener('click',()=>{
-        let readToggler=document.getElementById(`readstatus${toggler.id.slice(10)}`);
-        console.log(toggler.id.slice(10))
-        
-        if(myLibrary[toggler.id.slice(10)].read===true){
-            readToggler.classList.remove('reading');
-            readToggler.classList.add('pending');
-            readToggler.innerText='Pending';
-            myLibrary[toggler.id.slice(10)].read=false;
-            console.log(readToggler);
-        }
-        else if(myLibrary[toggler.id.slice(10)].read===false){
-            readToggler.classList.remove('pending');
-            readToggler.classList.add('reading');
-            readToggler.innerText='Completed';
-            myLibrary[toggler.id.slice(10)].read=true;
-            console.log(readToggler);
-            
 
+
+
+let btnRead= document.querySelectorAll(".reading");
+
+readFunc();
+
+function readFunc(){
+        for(let toggler of btnRead){
+        toggler.addEventListener('click',()=>{
+            let readToggler=document.getElementById(`readstatus${toggler.id.slice(10)}`);
+            console.log(toggler.id.slice(10))
+            
+            if(myLibrary[toggler.id.slice(10)].read===true){
+                readToggler.classList.remove('reading');
+                readToggler.classList.add('pending');
+                readToggler.innerText='Pending';
+                myLibrary[toggler.id.slice(10)].read=false;
+                console.log(readToggler);
+            }
+            else if(myLibrary[toggler.id.slice(10)].read===false){
+                readToggler.classList.remove('pending');
+                readToggler.classList.add('reading');
+                readToggler.innerText='Completed';
+                myLibrary[toggler.id.slice(10)].read=true;
+                console.log(readToggler);
+                
+
+            }
+            
+            
+        });
         }
-        
-        
-    });
-}
+    };
+
+
+
+
 
 let btnReadAlt= document.querySelectorAll(".pending");
-for(let togglerAlt of btnReadAlt){
 
-    togglerAlt.addEventListener('click',()=>{
-        let readTogglerAlt=document.getElementById(`readstatus${togglerAlt.id.slice(10)}`);
-        console.log(togglerAlt);      
-        
-        if(myLibrary[togglerAlt.id.slice(10)].read===false){
-            readTogglerAlt.classList.remove('pending');
-            readTogglerAlt.classList.add('reading');
-            readTogglerAlt.innerText='Completed';
-            myLibrary[togglerAlt.id.slice(10)].read=true;
-        
-        }
-        else if(myLibrary[togglerAlt.id.slice(10)].read===true){
-            readTogglerAlt.classList.remove('reading');
-            readTogglerAlt.classList.add('pending');
-            readTogglerAlt.innerText='Pending';
-            myLibrary[togglerAlt.id.slice(10)].read=false;
+pendingFunc();
 
-        }
+function pendingFunc(){
+    for(let togglerAlt of btnReadAlt){
+
+        togglerAlt.addEventListener('click',()=>{
+            let readTogglerAlt=document.getElementById(`readstatus${togglerAlt.id.slice(10)}`);
+            console.log(togglerAlt);      
             
+            if(myLibrary[togglerAlt.id.slice(10)].read===false){
+                readTogglerAlt.classList.remove('pending');
+                readTogglerAlt.classList.add('reading');
+                readTogglerAlt.innerText='Completed';
+                myLibrary[togglerAlt.id.slice(10)].read=true;
+            
+            }
+            else if(myLibrary[togglerAlt.id.slice(10)].read===true){
+                readTogglerAlt.classList.remove('reading');
+                readTogglerAlt.classList.add('pending');
+                readTogglerAlt.innerText='Pending';
+                myLibrary[togglerAlt.id.slice(10)].read=false;
+
+            }
+         
+        });
         
-        
-        
-    });
-    
+    }
 }
+
+
+
+
 let dialogs=document.querySelector("dialog");
 let buttonadd=document.querySelector(".addButton");
 buttonadd.addEventListener('click',()=>{dialogs.showModal();});
