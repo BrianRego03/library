@@ -1,15 +1,21 @@
 const myLibrary = [];
 
-function Book(name,author,pages,read){
-    this.name=name;
-    this.author=author;
-    this.pages=pages;
-    this.read=read;
-}
+class Book{
+    constructor(name,author,pages,read){
+        this.name=name;
+        this.author=author;
+        this.pages=pages;
+        this.read=read;
+    }
 
-Book.prototype.addBookToLibrary=function(){
-    myLibrary[myLibrary.length]=this;
-}
+    addBookToLibrary(){
+        myLibrary[myLibrary.length]=this;
+    }
+
+
+    }
+   
+
 
 const book1=new Book('A Game of Thrones','George.R.R.Martin',694,true);
 
